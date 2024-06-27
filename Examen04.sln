@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen04", "Examen04.csproj", "{51183169-718E-40B0-863C-1A2D351157A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion.csproj", "{51183169-718E-40B0-863C-1A2D351157A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{554D8554-6C49-4C28-8DBC-2DC7A9719EE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{5E0ED9D9-0060-49A6-AFC3-2BA1514A1C78}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{72545538-319F-48F7-9190-159623429292}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidad", "Entidad\Entidad.csproj", "{35C49B25-468B-40A5-A2CD-B7727112FD56}"
 EndProject
@@ -31,10 +29,6 @@ Global
 		{5E0ED9D9-0060-49A6-AFC3-2BA1514A1C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0ED9D9-0060-49A6-AFC3-2BA1514A1C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0ED9D9-0060-49A6-AFC3-2BA1514A1C78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72545538-319F-48F7-9190-159623429292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72545538-319F-48F7-9190-159623429292}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72545538-319F-48F7-9190-159623429292}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72545538-319F-48F7-9190-159623429292}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35C49B25-468B-40A5-A2CD-B7727112FD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35C49B25-468B-40A5-A2CD-B7727112FD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35C49B25-468B-40A5-A2CD-B7727112FD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
