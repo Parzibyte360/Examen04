@@ -9,7 +9,7 @@ namespace Entidad
 	public class Region
 	{
 		public int RegionId {  get; set; }
-		public int RegionName { get; set; }
-
+		public string RegionName { get; set; }
+		public bool Enabled { get; set; }
 	}
 }

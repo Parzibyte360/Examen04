@@ -8,6 +8,6 @@ namespace Datos
 {
 	public static class Conexion
 	{
-		public static string cadena = "";
+		public static string cadena = "Data Source=PARZIBYTE\\SQLEXPRESS02;Initial Catalog=WICMonitoriaDBDev;Integrated Security=True;";
 	}
 }

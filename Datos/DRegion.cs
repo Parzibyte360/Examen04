@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Region = Entidad.Region;
 
 namespace Datos
 {
@@ -14,12 +15,12 @@ namespace Datos
 	{
 		public List<Entidad.Region> Listar(string Nombre)
 		{
-			List<Entidad.Region> roles = new List<Entidad.Region>();
+			List<Entidad.Region> regions = new List<Entidad.Region>();
 
 			using (var connection = new SqlConnection(Conexion.cadena))
 			{
 				//Usar el procedimiento almacenado
-				SqlCommand cmd = new SqlCommand("USP_GetRoles", connection);
+				SqlCommand cmd = new SqlCommand("sp_ReadRegions", connection);
 				cmd.CommandType = CommandType.StoredProcedure;
 
 
@@ -35,17 +36,31 @@ namespace Datos
 				while (reader.Read())
 				{
 
-					int RoleID = reader["RegionId"] != DBNull.Value ? Convert.ToInt32(reader["RegionId"]) : 0;
-					string RoleName = reader["RegionName"] != DBNull.Value ? Convert.ToString(reader["RegionName"]) : "";
+					int RegionId = reader["RegionId"] != DBNull.Value ? Convert.ToInt32(reader["RegionId"]) : 0;
+					string RegionName = reader["RegionName"] != DBNull.Value ? Convert.ToString(reader["RegionName"]) : "";
 
-					roles.Add(new Entidad.Region { RegionId = RegionId, RegionName = RegionName });
+					regions.Add(new Region { RegionId = RegionId, RegionName = RegionName });
 
 
 				}
 				reader.Close();
 			}
-			return roles;
+			return regions;
+		}
+		public void Insertar(string Nombre)
+		{
+			using (var connection = new SqlConnection(Conexion.cadena))
+			{
+				connection.Open();
+				SqlCommand command = new SqlCommand("sp_CreateRegion", connection);
+				command.CommandType = CommandType.StoredProcedure;
 
+				SqlParameter parameter = new SqlParameter("@RegionName", SqlDbType.VarChar, 50);
+				parameter.Value = Nombre;
+				command.Parameters.Add(parameter);
+				command.ExecuteNonQuery();
+
+			}
 		}
 	}
 }

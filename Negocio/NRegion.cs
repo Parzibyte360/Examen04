@@ -11,13 +11,17 @@ namespace Negocio
 {
 	public class NRegion
 	{
-		NRegion datos = new NRegion();
+		DRegion datos = new DRegion();
 		public List<Entidad.Region> Listar(string Nombre)
 		{
 			List<Entidad.Region> result = new List<Entidad.Region>();
 
 			result = datos.Listar(Nombre);
 			return result;
+		}
+		public void Insertar(string Nombre)
+		{
+			datos.Insertar(Nombre);
 		}
 	}
 }
