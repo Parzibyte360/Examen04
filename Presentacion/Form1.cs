@@ -34,14 +34,12 @@ namespace Presentacion
 		{
 			try
 			{
-				//Registrat Rol, se comunica con la capa negocio
-
 				negocio.Insertar(txtRegionName.Text);
-				MessageBox.Show("Registro exitoso");
+				MessageBox.Show("Registro Exitoso!");
 			}
 			catch (Exception)
 			{
-				MessageBox.Show("Comunicarse con el Admin");
+				MessageBox.Show("Error! Comunicarse con el Administrador");
 				throw;
 			}
 

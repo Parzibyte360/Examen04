@@ -1,4 +1,4 @@
-﻿namespace Examen04
+﻿namespace Presentacion
 {
 	partial class Form1
 	{
