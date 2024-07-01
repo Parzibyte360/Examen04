@@ -1,0 +1,43 @@
+--SP para crear una region
+CREATE PROCEDURE sp_CreateRegion
+@RegionName NVARCHAR(100),
+@Enabled BIT
+AS
+BEGIN
+	INSERT INTO Regions(RegionName, Enabled)
+	VALUES (@RegionName,@Enabled)
+END
+
+
+--SP para listar regiones activas
+CREATE PROCEDURE sp_ReadRegions
+AS
+BEGIN
+	SELECT RegionId, RegionName, Enabled
+	FROM Regions
+	WHERE Enabled = 1
+END
+
+
+--SP para actualizar una region
+CREATE PROCEDURE sp_UpdateRegion
+@RegionId INT,
+@RegionName NVARCHAR(100),
+@Enabled BIT
+AS
+BEGIN
+	UPDATE Regions 
+	SET RegionName = @RegionName, Enabled = @Enabled
+	WHERE RegionId = @RegionId
+END
+
+
+--SP para eliminar una region de forma logica
+CREATE PROCEDURE sp_DeleteRegion
+@RegionId INT
+AS
+BEGIN
+	UPDATE Regions
+	SET Enabled = 0
+	WHERE RegionId = @RegionId
+END
