@@ -23,5 +23,14 @@ namespace Negocio
 		{
 			datos.Insertar(Nombre);
 		}
+		public void Actualizar(int RegionId, string RegionName)
+		{
+			datos.Actualizar(RegionId, RegionName);
+		}
+
+		public void Eliminar(int RegionId)
+		{
+			datos.Eliminar(RegionId);
+		}
 	}
 }

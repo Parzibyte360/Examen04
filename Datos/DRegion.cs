@@ -23,7 +23,6 @@ namespace Datos
 				SqlCommand cmd = new SqlCommand("sp_ReadRegions", connection);
 				cmd.CommandType = CommandType.StoredProcedure;
 
-
 				//Enviar los parámetros
 				SqlParameter parameter = new SqlParameter("@RoleName", SqlDbType.VarChar, 50);
 				parameter.Value = Nombre;
@@ -58,8 +57,43 @@ namespace Datos
 				SqlParameter parameter = new SqlParameter("@RegionName", SqlDbType.VarChar, 50);
 				parameter.Value = Nombre;
 				command.Parameters.Add(parameter);
-				command.ExecuteNonQuery();
 
+				command.ExecuteNonQuery();
+			}
+		}
+		public void Actualizar(int RegionId, string RegionName)
+		{
+			using (var connection = new SqlConnection(Conexion.cadena))
+			{
+				connection.Open();
+				SqlCommand command = new SqlCommand("sp_UpdateRegion", connection);
+				command.CommandType = CommandType.StoredProcedure;
+
+				SqlParameter parameter1 = new SqlParameter("@RegionId", SqlDbType.Int);
+				parameter1.Value = RegionId;
+				command.Parameters.Add(parameter1);
+
+				SqlParameter parameter2 = new SqlParameter("@RegionName", SqlDbType.VarChar, 50);
+				parameter2.Value = RegionName;
+				command.Parameters.Add(parameter2);
+
+				command.ExecuteNonQuery();
+			}
+		}
+		
+		public void Eliminar(int RegionId)
+		{
+			using (var connection = new SqlConnection(Conexion.cadena))
+			{
+				connection.Open();
+				SqlCommand command = new SqlCommand("sp_DeleteRegion", connection);
+				command.CommandType = CommandType.StoredProcedure;
+
+				SqlParameter parameter1 = new SqlParameter("@RegionId", SqlDbType.Int);
+				parameter1.Value = RegionId;
+				command.Parameters.Add(parameter1);
+
+				command.ExecuteNonQuery();
 			}
 		}
 	}
